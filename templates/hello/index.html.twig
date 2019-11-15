@@ -1,0 +1,41 @@
+<h1>{{ site_name }}</h1>
+<h3>{{ GA_code }}</h3>
+<ul>
+    {% for language in languages %}
+        <li><a href="{{ language.code }}">{{ language.lang }}</a></li>
+    {% endfor %}
+</ul>{#
+    {## } : commentaire
+    {{ }} : affichage
+    {% %} : instructions :  boucle, condition ..
+#}
+<h1>Bonjour {{ firstname is not empty ? firstname : 'inconnu' }}</h1>
+{# dump: debogage
+{{  dump(list) }} #}
+<ul>
+    {% for key, value in list %}
+        {# <li>{{ key }} : {{ value }} </li>
+        tilde : concaténation #}
+        <li>{{ key ~ ' : ' ~ value }}</li>
+    {% endfor %}
+</ul>
+
+{#
+    set: creation de variable dans la vue
+    for i
+#}
+{% set  array = ['value1', 'value2', 'value3'] %}
+<p>il y a {{ array | length }} elements in the array</p>
+
+{# affichage de la date #}
+<time>{{ now |date('D   d/m/Y') }}</time>
+
+{# affichage d'un nombre #}
+<p>{{ price | number_format(2,',', ' ') }}€</p>
+
+{% set text = 'un <a href="#">lien</a> et un autre <a href="#">lien</a>' %}
+<p>{{ text | hide_links }}</p>
+
+{# app : variable globale qui permet d'acceder aux données de l'application #}
+{{ dump(app) }}
+

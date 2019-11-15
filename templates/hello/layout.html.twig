@@ -1,0 +1,28 @@
+{% extends 'parent.html.twig' %}
+
+{% block title %}
+    {{ parent() }} | Mise en page
+{% endblock %}
+
+{% block content %}
+    <div class="col">
+        <h1>Bonjour</h1>
+        {#
+            lien entre les routes : se baser sur l'attributy name des @Routes
+                url : lien absolu
+                path : lien relatif
+            cibler une route avec des variables
+                fournir la valeur des variables en second paramètre
+        #}
+        <p><a href="{{ url('index') }}">Accueil</a></p>
+        <p><a href="{{ url('hello.index', { 'firstname' : 'tutu' }) }}">Bonjour a tutu</a></p>
+        {#
+            asset() : afficher une ressource publique (img, css ...)
+                cible le dossier public
+        #}
+        <p>
+            <img src="{{ asset('images/sauron.jpg') }}" alt="">
+        </p>
+    </div>
+{% endblock %}
+

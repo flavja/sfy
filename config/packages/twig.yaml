@@ -1,0 +1,11 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    #theme de formulaire
+    form_themes: ['bootstrap_4_layout.html.twig']
+    #creation de variables globales
+    globals:
+        languages:
+            - {'lang': 'francais', 'code': 'fr'}
+            - {'lang': 'anglais', 'code': 'en'}

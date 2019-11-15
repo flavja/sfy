@@ -1,0 +1,11 @@
+{% extends "parent.html.twig" %}
+
+{% block details %}
+    <div class="card" style="width: 23rem;">
+        <img src="{{asset(photo)}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ email}}</h5>
+            <p class="card-text">Vous êtes sur la page personnelle de {{ prenom ~ ' ' ~ nom }}</p>
+        </div>
+    </div>
+{% endblock %}
